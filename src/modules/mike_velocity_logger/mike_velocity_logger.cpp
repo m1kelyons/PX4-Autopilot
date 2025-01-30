@@ -18,10 +18,11 @@ MikeVelocityLogger::~MikeVelocityLogger()
 void MikeVelocityLogger::integrate_accel_and_publish(const vehicle_imu_s &imu) {
 
 
-    float dt = imu.delta_velocity_dt * 1e-6f; // Convert microseconds to seconds
-    vx += imu.delta_velocity[0] * dt;
-    vy += imu.delta_velocity[1] * dt;
-    vz += imu.delta_velocity[2] * dt;
+    dt = imu.delta_velocity_dt * 1e-6f; // Convert microseconds to seconds
+
+    vx += imu_axes_directions[0] * scaling_factor_imu * imu.delta_velocity[0] * dt;
+    vy += imu_axes_directions[1] * scaling_factor_imu * imu.delta_velocity[1] * dt;
+    vz += imu_axes_directions[2] * scaling_factor_imu * imu.delta_velocity[2] * dt;
 
     integrated_accel_s msg{};
     msg.timestamp = hrt_absolute_time();
