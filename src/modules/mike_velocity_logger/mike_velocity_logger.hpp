@@ -33,7 +33,7 @@ private:
 	float vx = 0.0f, vy = 0.0f, vz = 0.0f;
 	float dt = 1000.0f; // Integration delta time in microseconds
 	float scaling_factor_imu = 1.0e6f; // Convert to correct units
-    	float imu_axes_directions[3] = {-1.0f, -1.0f, -1.0f}; // IMU installation direction of axes
+	float imu_axes_directions[3] = {-1.0f, -1.0f, -1.0f}; // IMU installation direction of axes
 
 	void Run() override;
 	void integrate_accel_and_publish(const vehicle_imu_s &imu);
