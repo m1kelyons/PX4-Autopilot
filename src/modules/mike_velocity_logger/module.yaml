@@ -1,0 +1,3 @@
+module_name: mike_velocity_logger
+executable_name: mike_velocity_logger
+description: "Log velocity estimates from integrated accelerometer data."

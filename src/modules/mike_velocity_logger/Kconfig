@@ -1,0 +1,6 @@
+menuconfig MODULES_MIKE_VELOCITY_LOGGER
+	bool "mike_velocity_logger"
+	default y
+	---help---
+		Enable Logging velocity estimates from integrated accelerometer data.
+
