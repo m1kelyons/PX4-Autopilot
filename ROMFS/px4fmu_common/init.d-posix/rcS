@@ -295,6 +295,9 @@ fi
 # execute autostart post script if any
 [ -e "$autostart_file".post ] && . "$autostart_file".post
 
+# Run Mike's integrated_accel logger
+mike_velocity_logger start
+
 # Run script to start logging
 if param compare SYS_MC_EST_GROUP 2
 then
